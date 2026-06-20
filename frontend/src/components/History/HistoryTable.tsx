@@ -28,7 +28,7 @@ const InsightExpandedRow = ({ entry, id }: { entry: HistoryEntry; id: string }) 
       Reduction Insights
     </p>
     {entry.insights.length === 0 ? (
-      <p className="text-sm text-gray-500">No insights saved for this entry.</p>
+      <p className="text-sm text-gray-500"><span>No insights saved for this entry.</span></p>
     ) : (
       <ol className="space-y-2 list-none">
         {entry.insights.map((insight, i) => (
@@ -124,7 +124,7 @@ export const HistoryTable = ({ history }: HistoryTableProps) => {
                           transition-colors duration-150
                         "
                       >
-                        {isExpanded ? '▲ Hide' : '▼ View'}
+                        {isExpanded ? <span>▲ Hide</span> : <span>▼ View</span>}
                       </button>
                     </td>
                   </tr>

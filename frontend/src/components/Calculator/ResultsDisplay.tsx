@@ -41,7 +41,7 @@ const ComparisonBar = ({
         <span className="font-medium text-gray-700">{label}</span>
         <span className="font-bold text-gray-900">
           {pct.toFixed(0)}%{' '}
-          <span className="font-normal text-gray-500">of {formatKg(benchmarkKg)}</span>
+          <span className="font-normal text-gray-500"><span>of {formatKg(benchmarkKg)}</span></span>
         </span>
       </div>
       <div
@@ -66,8 +66,8 @@ const ComparisonBar = ({
       </div>
       <p className="text-xs text-gray-400">
         {pct <= 100
-          ? `✅ You are below the ${benchmark}`
-          : `⚠️ You are ${(pct - 100).toFixed(0)}% above the ${benchmark}`}
+          ? <span>{`✅ You are below the ${benchmark}`}</span>
+          : <span>{`⚠️ You are ${(pct - 100).toFixed(0)}% above the ${benchmark}`}</span>}
       </p>
     </div>
   );
@@ -90,13 +90,13 @@ export const ResultsDisplay = ({ result }: ResultsDisplayProps) => {
       {/* Total Footprint Hero */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
         <h2 id="results-heading" className="text-xl font-semibold text-gray-600 mb-2">
-          Your Annual Carbon Footprint
+          <span>Your Annual Carbon Footprint</span>
         </h2>
         <div className="flex items-end justify-center gap-2 mb-3">
           <span className="text-6xl font-black text-gray-900 tabular-nums">
             {formatKg(result.total_kg)}
           </span>
-          <span className="text-2xl text-gray-400 mb-2">CO₂e</span>
+          <span className="text-2xl text-gray-400 mb-2"><span>CO₂e</span></span>
         </div>
         <span
           className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold ${colorClass} ${bgClass}`}
@@ -108,7 +108,7 @@ export const ResultsDisplay = ({ result }: ResultsDisplayProps) => {
       {/* Benchmark Comparisons */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-5">
         <h3 className="text-base font-semibold text-gray-800 flex items-center gap-2">
-          <span aria-hidden="true">📊</span> How You Compare
+          <span aria-hidden="true">📊</span><span> How You Compare</span>
         </h3>
         <ComparisonBar
           id="global-average-bar"
@@ -125,14 +125,14 @@ export const ResultsDisplay = ({ result }: ResultsDisplayProps) => {
           benchmarkKg={2000}
         />
         <p className="text-xs text-gray-400 pt-2 border-t border-gray-50">
-          Sources: Our World in Data 2023 (global avg) · IPCC SR1.5 (Paris target)
+          <span>Sources: Our World in Data 2023 (global avg) · IPCC SR1.5 (Paris target)</span>
         </p>
       </div>
 
       {/* Category Chart */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
         <h3 className="text-base font-semibold text-gray-800 mb-4 flex items-center gap-2">
-          <span aria-hidden="true">🔍</span> Breakdown by Category
+          <span aria-hidden="true">🔍</span><span> Breakdown by Category</span>
         </h3>
         <CategoryChart breakdown={result.breakdown} ranked_categories={result.ranked_categories} />
       </div>
@@ -163,8 +163,8 @@ export const ResultsDisplay = ({ result }: ResultsDisplayProps) => {
             ) : (
               <>
                 <span aria-hidden="true">✨</span>
-                Get Personalised Insights
-                <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">Gemini AI</span>
+                <span>Get Personalised Insights</span>
+                <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full"><span>Gemini AI</span></span>
               </>
             )}
           </button>

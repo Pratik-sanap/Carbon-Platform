@@ -1,6 +1,6 @@
 # Carbon Footprint Awareness Platform
 
-![CI](https://github.com/vinaybhadane/carbon-platform/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Pratik-sanap/Carbon-Platform/actions/workflows/ci.yml/badge.svg)
 ![Coverage](https://img.shields.io/badge/coverage-98%25-brightgreen)
 ![Accessibility](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-brightgreen)
 ![Google Services](https://img.shields.io/badge/google%20services-7-blue)
@@ -15,7 +15,7 @@
 ## Live Demo
 
 The platform is deployed and live at:
-👉 **[https://carbon-platform-962545646921.us-central1.run.app](https://carbon-platform-962545646921.us-central1.run.app)**
+👉 **[https://carbon-platform-777334451857.us-central1.run.app/](https://carbon-platform-777334451857.us-central1.run.app/)**
 
 ---
 
@@ -80,7 +80,7 @@ User Inputs (transport, home, diet, consumption)
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/vinaybhadane/carbon-platform.git
+git clone https://github.com/Pratik-sanap/Carbon-Platform.git
 cd carbon-platform
 
 # 2. Backend — with feature flags disabled (no GCP credentials needed)

@@ -50,7 +50,7 @@ export const HistoryChart = ({ history }: HistoryChartProps) => {
           📈
         </div>
         <p role="status" className="text-gray-500">
-          No history yet. Calculate your footprint to start tracking your progress over time.
+          <span>No history yet. Calculate your footprint to start tracking your progress over time.</span>
         </p>
       </div>
     );
@@ -65,7 +65,7 @@ export const HistoryChart = ({ history }: HistoryChartProps) => {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
       <h3 className="text-base font-semibold text-gray-800 flex items-center gap-2">
-        <span aria-hidden="true">📈</span> Footprint Trend
+        <span aria-hidden="true">📈</span><span> Footprint Trend</span>
       </h3>
 
       {/* Recharts line chart */}

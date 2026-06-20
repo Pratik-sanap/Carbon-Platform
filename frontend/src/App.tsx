@@ -42,7 +42,7 @@ const NavLink = ({
       }
     `}
   >
-    {label}
+    <span>{label}</span>
   </button>
 );
 
@@ -68,7 +68,7 @@ function AppContent() {
   }, [step]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-primary-50/30 to-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-primary-50/30 to-gray-50" translate="no">
       {/* Skip Link */}
       <SkipLink />
 
@@ -91,10 +91,10 @@ function AppContent() {
             </span>
             <div className="text-left">
               <span className="block text-sm font-bold text-gray-900 leading-tight">
-                Carbon Platform
+                <span>Carbon Platform</span>
               </span>
               <span className="block text-xs text-primary-600 leading-tight">
-                Understand · Track · Reduce
+                <span>Understand · Track · Reduce</span>
               </span>
             </div>
           </button>
@@ -124,21 +124,21 @@ function AppContent() {
         <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-primary-500 text-white py-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl font-black mb-4 tracking-tight drop-shadow-md text-transparent bg-clip-text bg-gradient-to-b from-white to-primary-100">
-              What's Your Carbon Footprint?
+              <span>What's Your Carbon Footprint?</span>
             </h1>
             <p className="text-primary-100 text-base sm:text-lg max-w-2xl mx-auto drop-shadow-sm">
-              Enter your lifestyle data below to calculate your annual CO₂e emissions, compare to
-              global benchmarks, and receive AI-powered personalised actions.
+              <span>Enter your lifestyle data below to calculate your annual CO₂e emissions, compare to
+              global benchmarks, and receive AI-powered personalised actions.</span>
             </p>
             <div className="flex justify-center gap-6 mt-6 text-sm text-primary-200">
               <span className="flex items-center gap-1.5">
-                <span aria-hidden="true">📊</span> Science-backed factors
+                <span aria-hidden="true">📊</span><span> Science-backed factors</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span aria-hidden="true">✨</span> Gemini AI insights
+                <span aria-hidden="true">✨</span><span> Gemini AI insights</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span aria-hidden="true">🔒</span> Anonymous & private
+                <span aria-hidden="true">🔒</span><span> Anonymous & private</span>
               </span>
             </div>
           </div>
@@ -168,7 +168,7 @@ function AppContent() {
                 transition-colors duration-150
               "
             >
-              <span aria-hidden="true">←</span> Back to Calculator
+              <span aria-hidden="true">←</span><span> Back to Calculator</span>
             </button>
             <ResultsDisplay result={result} />
             {insights && <InsightsList insightsResponse={insights} />}
@@ -178,9 +178,9 @@ function AppContent() {
         {step === 'history' && (
           <div className="space-y-6">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-1">Your Carbon History</h1>
+              <h1 className="text-2xl font-bold text-gray-900 mb-1"><span>Your Carbon History</span></h1>
               <p className="text-gray-500 text-sm">
-                Track your footprint over time to see the impact of your changes.
+                <span>Track your footprint over time to see the impact of your changes.</span>
               </p>
             </div>
             {isLoadingHistory ? (
@@ -206,32 +206,32 @@ function AppContent() {
             <div>
               <h2 className="text-sm font-semibold text-gray-700 mb-2">Data Sources</h2>
               <ul className="text-xs text-gray-500 space-y-1 list-none">
-                <li>UK DEFRA 2023 — Transport & Home Energy factors</li>
-                <li>US EPA 2023 — Electricity grid emissions</li>
-                <li>ICAO Carbon Calculator — Aviation emissions</li>
-                <li>Our World in Data 2023 — Diet emissions & global average</li>
-                <li>IPCC AR6 / SR1.5 — Consumption & Paris target</li>
+                <li><span>UK DEFRA 2023 — Transport & Home Energy factors</span></li>
+                <li><span>US EPA 2023 — Electricity grid emissions</span></li>
+                <li><span>ICAO Carbon Calculator — Aviation emissions</span></li>
+                <li><span>Our World in Data 2023 — Diet emissions & global average</span></li>
+                <li><span>IPCC AR6 / SR1.5 — Consumption & Paris target</span></li>
               </ul>
             </div>
             <div>
               <h2 className="text-sm font-semibold text-gray-700 mb-2">About</h2>
               <p className="text-xs text-gray-500">
-                This tool provides estimates for educational purposes based on peer-reviewed
+                <span>This tool provides estimates for educational purposes based on peer-reviewed
                 emission factors. Individual results may vary based on local grid mix, vehicle
-                efficiency, and personal circumstances.
+                efficiency, and personal circumstances.</span>
               </p>
             </div>
           </div>
           <div className="border-t border-gray-100 pt-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-400">
-            <span>© 2024 Carbon Footprint Awareness Platform</span>
+            <span><span>© 2024 Carbon Footprint Awareness Platform</span></span>
             <span className="flex items-center gap-1">
-              Powered by{' '}
+              <span>Powered by</span>{' '}
               <span aria-label="Google Gemini AI" className="font-medium text-gray-500">
-                Google Gemini
+                <span>Google Gemini</span>
               </span>{' '}
-              ·{' '}
+              <span>·</span>{' '}
               <span aria-label="Google Cloud" className="font-medium text-gray-500">
-                Google Cloud
+                <span>Google Cloud</span>
               </span>
             </span>
           </div>

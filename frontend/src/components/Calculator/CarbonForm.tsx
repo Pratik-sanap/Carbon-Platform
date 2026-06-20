@@ -100,7 +100,7 @@ const InputField = ({
           aria-live="polite"
           className="text-xs text-red-600 flex items-center gap-1"
         >
-          <span aria-hidden="true">⚠</span> {error}
+          <span aria-hidden="true">⚠</span><span> {error}</span>
         </span>
       )}
     </div>
@@ -460,7 +460,7 @@ export const CarbonForm = () => {
             ⚠️
           </span>
           <div>
-            <p className="text-sm font-medium text-red-800">Calculation failed</p>
+            <p className="text-sm font-medium text-red-800"><span>Calculation failed</span></p>
             <p className="text-sm text-red-600">{storeError}</p>
           </div>
         </div>
@@ -492,7 +492,7 @@ export const CarbonForm = () => {
           ) : (
             <>
               <span aria-hidden="true">🌍</span>
-              Calculate Footprint
+              <span>Calculate Footprint</span>
             </>
           )}
         </button>

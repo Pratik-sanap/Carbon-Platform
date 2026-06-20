@@ -33,10 +33,10 @@ export const InsightsList = ({ insightsResponse }: InsightsListProps) => {
         <div className="flex items-start justify-between flex-wrap gap-3">
           <div>
             <h2 id="insights-heading" className="text-xl font-bold text-gray-900 mb-1">
-              Your Personalised Reduction Plan
+              <span>Your Personalised Reduction Plan</span>
             </h2>
             <p className="text-sm text-gray-500">
-              Targeting your top emission sources with specific, measurable actions.
+              <span>Targeting your top emission sources with specific, measurable actions.</span>
             </p>
           </div>
           {source === 'gemini' && (
@@ -50,7 +50,7 @@ export const InsightsList = ({ insightsResponse }: InsightsListProps) => {
               "
             >
               <span aria-hidden="true">✨</span>
-              Powered by Google Gemini AI
+              <span>Powered by Google Gemini AI</span>
             </span>
           )}
           {source === 'rules' && (
@@ -63,7 +63,7 @@ export const InsightsList = ({ insightsResponse }: InsightsListProps) => {
               "
             >
               <span aria-hidden="true">🔧</span>
-              Rule-based insights
+              <span>Rule-based insights</span>
             </span>
           )}
         </div>
@@ -77,8 +77,8 @@ export const InsightsList = ({ insightsResponse }: InsightsListProps) => {
             {formatKg(total_potential_saving_kg)}
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-800">Total potential annual saving</p>
-            <p className="text-xs text-gray-500">If you implement all 3 actions below</p>
+              <p className="text-sm font-semibold text-gray-800"><span>Total potential annual saving</span></p>
+              <p className="text-xs text-gray-500"><span>If you implement all 3 actions below</span></p>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ export const InsightsList = ({ insightsResponse }: InsightsListProps) => {
           aria-label="Save this carbon footprint snapshot to your history"
         >
           <span aria-hidden="true">💾</span>
-          Save to History
+          <span>Save to History</span>
         </button>
       </div>
     </section>
