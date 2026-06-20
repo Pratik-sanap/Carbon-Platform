@@ -4,7 +4,7 @@
    Custom classes below handle skip links, focus rings, and typography.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,14 +21,14 @@
   }
 
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-slate-50/50 text-gray-900;
     margin: 0;
   }
 
@@ -46,7 +46,7 @@
 
   /* High-contrast focus rings for keyboard navigation */
   :focus-visible {
-    outline: 2px solid #16a34a;
+    outline: 2px solid #10b981;
     outline-offset: 2px;
   }
 }
@@ -62,17 +62,31 @@
 
   .skip-link:focus {
     @apply not-sr-only absolute top-4 left-4 z-50;
-    @apply bg-primary-700 text-white px-4 py-2 rounded-md;
+    @apply bg-emerald-700 text-white px-4 py-2 rounded-md;
     @apply outline-none ring-2 ring-white ring-offset-2;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Tabular numbers for all numeric displays
+   Tabular numbers for all numeric displays & premium elements
    -------------------------------------------------------------------------- */
 @layer utilities {
   .tabular-nums {
     font-variant-numeric: tabular-nums;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .glass-panel-dark {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -92,6 +106,33 @@
    -------------------------------------------------------------------------- */
 #main-content {
   scroll-margin-top: 72px;
+}
+
+/* Custom background animation blobs */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) scale(1.05);
+  }
+  50% {
+    transform: translateY(15px) scale(0.95);
+  }
+}
+
+.animate-blob-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-blob-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
 }
 
 /* --------------------------------------------------------------------------
@@ -114,3 +155,4 @@
     border: 1px solid #e5e7eb !important;
   }
 }
+

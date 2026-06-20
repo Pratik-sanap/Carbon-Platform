@@ -33,12 +33,12 @@ const NavLink = ({
     onClick={onClick}
     aria-current={active ? 'page' : undefined}
     className={`
-      px-4 py-2 rounded-xl text-sm font-medium transition-all duration-150
-      focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+      px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200
+      focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
       ${
         active
-          ? 'bg-primary-600 text-white shadow-md shadow-primary-600/20'
-          : 'text-gray-600 hover:text-primary-700 hover:bg-primary-50'
+          ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 active:scale-95'
+          : 'text-slate-600 hover:text-emerald-700 hover:bg-emerald-50/50'
       }
     `}
   >
@@ -68,7 +68,11 @@ function AppContent() {
   }, [step]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-primary-50/30 to-gray-50" translate="no">
+    <div className="relative min-h-screen bg-slate-50/50 overflow-hidden" translate="no">
+      {/* Premium Decorative Blobs */}
+      <div className="absolute top-24 left-[-10%] w-[40rem] h-[40rem] rounded-full bg-emerald-100/40 blur-3xl pointer-events-none animate-blob-slow" />
+      <div className="absolute bottom-10 right-[-10%] w-[50rem] h-[50rem] rounded-full bg-teal-100/30 blur-3xl pointer-events-none animate-blob-delayed" />
+
       {/* Skip Link */}
       <SkipLink />
 
@@ -77,23 +81,23 @@ function AppContent() {
       {/* ------------------------------------------------------------------ */}
       <header
         role="banner"
-        className="sticky top-0 z-40 bg-white/90 backdrop-blur-sm border-b border-gray-100 shadow-sm"
+        className="sticky top-0 z-40 bg-white/75 backdrop-blur-md border-b border-slate-100 shadow-sm"
       >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={reset}
             aria-label="Carbon Footprint Platform — return to calculator"
-            className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg p-1"
+            className="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl p-1 transition-all duration-150 active:scale-95"
           >
-            <span className="text-2xl" aria-hidden="true">
+            <span className="text-2xl filter drop-shadow-sm" aria-hidden="true">
               🌍
             </span>
             <div className="text-left">
-              <span className="block text-sm font-bold text-gray-900 leading-tight">
+              <span className="block text-sm font-extrabold text-slate-800 leading-tight tracking-tight">
                 <span>Carbon Platform</span>
               </span>
-              <span className="block text-xs text-primary-600 leading-tight">
+              <span className="block text-[10px] font-semibold text-emerald-600 uppercase tracking-wider leading-tight">
                 <span>Understand · Track · Reduce</span>
               </span>
             </div>
@@ -121,23 +125,24 @@ function AppContent() {
       {/* Hero Banner (only on form step)                                      */}
       {/* ------------------------------------------------------------------ */}
       {step === 'form' && (
-        <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-primary-500 text-white py-10 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-black mb-4 tracking-tight drop-shadow-md text-transparent bg-clip-text bg-gradient-to-b from-white to-primary-100">
+        <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-950 to-emerald-900 text-white py-14 px-4">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.2),transparent_50%)]" />
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-emerald-100">
               <span>What's Your Carbon Footprint?</span>
             </h1>
-            <p className="text-primary-100 text-base sm:text-lg max-w-2xl mx-auto drop-shadow-sm">
+            <p className="text-emerald-100/90 text-base sm:text-lg max-w-2xl mx-auto font-medium">
               <span>Enter your lifestyle data below to calculate your annual CO₂e emissions, compare to
               global benchmarks, and receive AI-powered personalised actions.</span>
             </p>
-            <div className="flex justify-center gap-6 mt-6 text-sm text-primary-200">
-              <span className="flex items-center gap-1.5">
+            <div className="flex flex-wrap justify-center gap-6 mt-8 text-xs font-semibold uppercase tracking-wider text-emerald-300">
+              <span className="flex items-center gap-2 bg-emerald-950/50 px-3.5 py-1.5 rounded-full border border-emerald-500/20 backdrop-blur-sm">
                 <span aria-hidden="true">📊</span><span> Science-backed factors</span>
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-2 bg-emerald-950/50 px-3.5 py-1.5 rounded-full border border-emerald-500/20 backdrop-blur-sm">
                 <span aria-hidden="true">✨</span><span> Gemini AI insights</span>
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-2 bg-emerald-950/50 px-3.5 py-1.5 rounded-full border border-emerald-500/20 backdrop-blur-sm">
                 <span aria-hidden="true">🔒</span><span> Anonymous & private</span>
               </span>
             </div>
